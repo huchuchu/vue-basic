@@ -31,3 +31,8 @@ yarn serve
 1. 싱글 파일 컴포넌트 기본 템플릿 자동완성 : vbc + tab
 2. return data 자동완성 : vda + tab
 ```
+
+## basic 정리
+1. props : v-bind
+2. event
+3. emit : $emit

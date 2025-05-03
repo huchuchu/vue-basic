@@ -1,10 +1,14 @@
 <template>
-  <AppHeader></AppHeader>
-  <div>
+  <AppHeader 
+    v-bind:appTitle="message"
+    v-on:change="changeMessage">
+  </AppHeader>
+  <!-- <div>
     {{ message }}
   </div>
-  <!-- <button v-on:click=""></button> -->
-  <button @click="showAlert">경고</button>
+  <button v-on:click=""></button> 
+  <button @click="showAlert">경고</button> -->
+
 </template>
 
 <script>
@@ -21,12 +25,15 @@ export default {
   },
   data(){
     return {
-      message : 'hi'
+      message : '웹 헤더 컴포넌트'
     }
   },
   methods:{
     showAlert(){
       alert('hello')
+    },
+    changeMessage(){
+      this.message = '변경 됨'
     }
   }
 
