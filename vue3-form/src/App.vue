@@ -18,33 +18,61 @@
 <script>
   // import 라이브러리 이름 from 패키지 이름
   import axios from 'axios'
+  import { ref } from 'vue';
 
   export default {
-    data(){
-      return{
-        username : '',
-        password : '',
-      }
-    },
-    methods:{
-      submitForm(event){
-        // method는 이벤트를 첫번째 파라미터로 가져올 수 있다다
-        // form의 기본동작 제어*ex 새로고침
-        // event.preventDefault(); 
-        // 이벤트 발생 지점에서도 제어할 수 있음!!  
+    setup(){
+      // data
+      var username = ref('');
+      var password = ref('');
 
-        console.log('제출됨');
-        console.log('event', event);
-        const data = {
-          username : this.username,
-          password : this.password
-        }
-        axios.post('https://jsonplaceholder.typicode.com/users/',data)
-        .then(response=>{
+      // methods
+      var submitForm = ()=>{
+        axios.post('https://jsonplaceholder.typicode.com/users/',{
+          username: username.value,
+          password : password.value
+        }).then(response => {
           console.log('response', response)
-        });                
+        })
+      }
+
+      return{username, password, submitForm}
+      
+    },
+    
+    methods:{
+      // setup에서 return 한 값들은 인스턴스 옵션 내에서도 사용할 수 있다
+      logTxt(){
+        console.log('this.username', this.username)
       }
     }
+
+
+    // data(){
+    //   return{
+    //     username : '',
+    //     password : '',
+    //   }
+    // },
+    // methods:{
+    //   submitForm(event){
+    //     // method는 이벤트를 첫번째 파라미터로 가져올 수 있다다
+    //     // form의 기본동작 제어*ex 새로고침
+    //     // event.preventDefault(); 
+    //     // 이벤트 발생 지점에서도 제어할 수 있음!!  
+
+    //     console.log('제출됨');
+    //     console.log('event', event);
+    //     const data = {
+    //       username : this.username,
+    //       password : this.password
+    //     }
+    //     axios.post('https://jsonplaceholder.typicode.com/users/',data)
+    //     .then(response=>{
+    //       console.log('response', response)
+    //     });                
+    //   }
+    // }
 
   }
 </script>
