@@ -26,6 +26,10 @@ npm install -g yarn
 프로젝트 root dir까지 이동 (package.json 있는곳까지)
 yarn serve
 ```
+## axios 설치
+```
+yarn add axios
+``` 
 ## snippets 정리
 ```
 1. 싱글 파일 컴포넌트 기본 템플릿 자동완성 : vbc + tab
@@ -34,5 +38,18 @@ yarn serve
 
 ## basic 정리
 1. props : v-bind
-2. event
-3. emit : $emit
+2. event emit : $emit
+
+## 정리 페이지
+1. vue-loader
+https://vue-loader.vuejs.org/#what-is-vue-loader
+
+2. 웹팩
+https://joshua1988.github.io/webpack-guide/guide.html
+
+3. v-model
+https://joshua1988.github.io/web-development/vuejs/v-model-usage/
+https://vuejs.org/guide/essentials/forms.html
+
+4. axios
+https://github.com/axios/axios
