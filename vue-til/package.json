@@ -48,6 +48,7 @@
       "prettier/prettier": [
         "error",
         {
+          "endOfLine": "lf",
           "singleQuote": true,
           "semi": true,
           "useTabs": true,

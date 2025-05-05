@@ -39,17 +39,22 @@ yarn add axios
 ## basic 정리
 1. props : v-bind
 2. event emit : $emit
+3. 파일 경로
 
 ## 정리 페이지
-1. vue-loader
+1. vue-loader  
 https://vue-loader.vuejs.org/#what-is-vue-loader
 
-2. 웹팩
-https://joshua1988.github.io/webpack-guide/guide.html
+2. style guid  
+https://ko.vuejs.org/style-guide/
 
-3. v-model
-https://joshua1988.github.io/web-development/vuejs/v-model-usage/
+3. v-model  
+https://joshua1988.github.io/web-development/vuejs/v-model-usage/  
 https://vuejs.org/guide/essentials/forms.html
 
-4. axios
+2. 웹팩  
+https://joshua1988.github.io/webpack-guide/guide.html
+
+
+4. axios  
 https://github.com/axios/axios
