@@ -19,6 +19,10 @@ import { createRouter, createWebHistory } from 'vue-router';
 // 코드 스플리팅 : Lazy load
 const routes = [
 	{
+		path: '/',
+		redirect: '/login',
+	},
+	{
 		path: '/login',
 		name: 'LoginPage',
 		component: () => import('@/views/LoginPage.vue'),
