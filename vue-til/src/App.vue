@@ -1,29 +1,14 @@
 <template>
-	<img alt="Vue logo" src="./assets/logo.png" />
-	<HelloWorld msg="Welcome to Your Vue.js App" />
+	<header>
+		<!--RouterLink: to에 지정된 문자열로 이동시켜줌-->
+		<RouterLink to="/login">로그인</RouterLink> |
+		<RouterLink to="signup">회원가입</RouterLink>
+	</header>
+	<RouterView></RouterView>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
-export default {
-	name: 'App',
-	components: {
-		HelloWorld,
-	},
-	created() {
-		console.log('a');
-	},
-};
+export default {};
 </script>
 
-<style>
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	margin-top: 60px;
-}
-</style>
+<style scoped></style>
