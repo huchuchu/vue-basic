@@ -32,6 +32,11 @@ const routes = [
 		name: 'SignupPage',
 		component: () => import('@/views/SignupPage.vue'),
 	},
+	{
+		path: '/:pathMatch(.*)*', // 위 url을 제외한 나머지
+		name: 'notFoundPage',
+		component: () => import('@/views/NotFoundPage.vue'),
+	},
 ];
 
 const router = createRouter({
