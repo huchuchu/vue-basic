@@ -1,18 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import LoninPage from '@/views/LoninPage.vue';
-import SignupPage from '@/views/SignupPage.vue';
+// import LoginPage from '@/views/LoginPage.vue';
+// import SignupPage from '@/views/SignupPage.vue';
 
 // 라우팅 정보를 담는 배열
+// const routes = [
+// 	{
+// 		path: '/login',
+// 		name: 'LoninPage',
+// 		component: LoninPage,
+// 	},
+// 	{
+// 		path: '/signup',
+// 		name: 'SignupPage',
+// 		component: SignupPage,
+// 	},
+// ];
+
+// 코드 스플리팅 : Lazy load
 const routes = [
 	{
 		path: '/login',
-		name: 'LoninPage',
-		component: LoninPage,
+		name: 'LoginPage',
+		component: () => import('@/views/LoginPage.vue'),
 	},
 	{
 		path: '/signup',
 		name: 'SignupPage',
-		component: SignupPage,
+		component: () => import('@/views/SignupPage.vue'),
 	},
 ];
 
