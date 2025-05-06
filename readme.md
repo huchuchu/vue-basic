@@ -55,6 +55,9 @@ https://vuejs.org/guide/essentials/forms.html
 4. vue- router  
 https://router.vuejs.org/
 
+5. vue-env  
+https://cli.vuejs.org/guide/mode-and-env.html
+
 2. 웹팩  
 https://joshua1988.github.io/webpack-guide/guide.html
 
