@@ -27,16 +27,25 @@ export default {
 	},
 	methods: {
 		async submitForm() {
-			const userData = {
-				username: this.username,
-				password: this.password,
-			};
+			try {
+				// 비즈니스 로직
+				const userData = {
+					username: this.username,
+					password: this.password,
+				};
 
-			const { data } = await loginUser(userData);
-			console.log('data', data.user.username);
-			this.logMessage = `${data.user.username} 님 로그인되었습니다.`;
-
-			this.initForm();
+				const { data } = await loginUser(userData);
+				console.log('data', data.user.username);
+				this.logMessage = `${data.user.username} 님 로그인되었습니다.`;
+				// this.initForm();
+			} catch (error) {
+				// 에러 핸들링
+				console.log('error', error.response.data);
+				this.logMessage = error.response.data;
+				// this.initForm();
+			} finally {
+				this.initForm();
+			}
 		},
 		initForm() {
 			this.username = '';
