@@ -21,6 +21,12 @@ vue create vue3-cli
 ```
 npm install -g yarn
 ```
+## eslint 설치
+```
+vue add eslint
+ESLint config : prettier
+Lint on save
+```
 ## 프로젝트 실행
 ```
 프로젝트 root dir까지 이동 (package.json 있는곳까지)
@@ -30,6 +36,8 @@ yarn serve
 ```
 yarn add axios
 ``` 
+
+
 ## snippets 정리
 ```
 1. 싱글 파일 컴포넌트 기본 템플릿 자동완성 : vbc + tab
