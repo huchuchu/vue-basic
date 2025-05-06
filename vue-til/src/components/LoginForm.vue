@@ -56,6 +56,9 @@ export default {
 
 				const { data } = await loginUser(userData);
 				console.log('data', data.user.username);
+
+				//main이동
+				this.$router.push('/main');
 				this.logMessage = `${data.user.username} 님 로그인되었습니다.`;
 				// this.initForm();
 			} catch (error) {
