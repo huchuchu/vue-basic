@@ -9,13 +9,16 @@
 			<label for="password"></label>
 			<input type="text" id="password" v-model="password" />
 		</div>
-		<button type="submit">로그인</button>
+		<button v-bind:disabled="!isUsernameValid || !password" type="submit">
+			로그인
+		</button>
 	</form>
 	<p>{{ logMessage }}</p>
 </template>
 
 <script>
 import { loginUser } from '@/api/index';
+import { validEmail } from '@/utils/validation';
 
 export default {
 	data() {
@@ -24,6 +27,11 @@ export default {
 			password: '',
 			logMessage: '',
 		};
+	},
+	computed: {
+		isUsernameValid() {
+			return validEmail(this.username);
+		},
 	},
 	methods: {
 		async submitForm() {
