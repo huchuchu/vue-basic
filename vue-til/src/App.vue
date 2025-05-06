@@ -1,6 +1,10 @@
 <template>
-	<AppHeader></AppHeader>
-	<RouterView></RouterView>
+	<div class="app">
+		<AppHeader></AppHeader>
+		<div class="app-contents">
+			<router-view></router-view>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -13,4 +17,7 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+@import './css/reset.css';
+@import './css/common.css';
+</style>

@@ -1,14 +1,16 @@
 <template>
-	<div>로그인 페이지</div>
-	<LoginFrom></LoginFrom>
+	<div>
+		<h1 class="page-header">로그인 페이지</h1>
+		<LoginForm></LoginForm>
+	</div>
 </template>
 
 <script>
-import LoginFrom from '@/components/LoginFrom.vue';
+import LoginForm from '@/components/LoginForm.vue';
 
 export default {
 	components: {
-		LoginFrom,
+		LoginForm,
 	},
 };
 </script>
