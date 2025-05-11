@@ -1,5 +1,5 @@
 <template>
-	<TodoHeader></TodoHeader>
+	<TodoHeader :appTitle="title"></TodoHeader>
 	<!-- <TodoInput @하위컴포넌트의 이벤트 이름="상위컴포넌트의 메서드 이름"></TodoInput> -->
 	<TodoInput @add="addTodoItem"></TodoInput>
 	<!-- <TodoList :프롭스이름="상위 컴포넌트의 데이터 이름"></TodoList> -->
@@ -21,6 +21,7 @@ export default {
 	setup() {
 		//data
 		const todoItems = ref([]);
+		const title = '할일 앱';
 
 		//method
 		function fetchTodos() {
@@ -46,7 +47,7 @@ export default {
 			localStorage.removeItem(item);
 		}
 
-		return { todoItems, addTodoItem, removeTodoItem };
+		return { todoItems, addTodoItem, removeTodoItem, title };
 	},
 };
 </script>
