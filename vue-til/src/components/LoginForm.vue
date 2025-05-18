@@ -57,18 +57,15 @@ export default {
 				};
 
 				const { data } = await loginUser(userData);
-				console.log('data', data.user.username);
-				this.logMessage = `${data.user.username} 님 로그인되었습니다.`;
+				console.log('data', data.token);
 				userStore.setUsername(data.user.username);
-				//main이동
-				this.$router.push('/main');
+				userStore.setToken(data.token);
 
-				// this.initForm();
+				this.$router.push('/main');
 			} catch (error) {
 				// 에러 핸들링
 				console.log('error', error.response.data);
 				this.logMessage = error.response.data;
-				// this.initForm();
 			} finally {
 				this.initForm();
 			}
