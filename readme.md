@@ -49,6 +49,10 @@ yarn add axios
 2. event emit : $emit
 3. 파일 경로
 
+## pinia
+1. 상태관련 로직은 store/
+2. composables/는 상태와 무관한 재사용 로직 (useWindowSize, useDebounce 등)
+
 ## 정리 페이지
 1. vue-loader  
 https://vue-loader.vuejs.org/#what-is-vue-loader

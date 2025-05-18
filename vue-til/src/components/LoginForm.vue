@@ -30,6 +30,7 @@
 
 <script>
 import { loginUser } from '@/api/index';
+import { useUserStore } from '@/store/useUserStore';
 import { validEmail } from '@/utils/validation';
 
 export default {
@@ -48,6 +49,7 @@ export default {
 	methods: {
 		async submitForm() {
 			try {
+				const userStore = useUserStore();
 				// 비즈니스 로직
 				const userData = {
 					username: this.username,
@@ -56,10 +58,11 @@ export default {
 
 				const { data } = await loginUser(userData);
 				console.log('data', data.user.username);
-
+				this.logMessage = `${data.user.username} 님 로그인되었습니다.`;
+				userStore.setUsername(data.user.username);
 				//main이동
 				this.$router.push('/main');
-				this.logMessage = `${data.user.username} 님 로그인되었습니다.`;
+
 				// this.initForm();
 			} catch (error) {
 				// 에러 핸들링
