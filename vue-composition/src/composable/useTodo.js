@@ -1,4 +1,4 @@
-import { onBeforeMount, ref } from 'vue';
+import { ref } from 'vue';
 
 function useTodo() {
 	const todoItems = ref([]);
@@ -18,10 +18,6 @@ function useTodo() {
 		todoItems.value.push(todo);
 		localStorage.setItem(todo, todo);
 	}
-
-	onBeforeMount(() => {
-		todoItems.value = fetchTodos();
-	});
 
 	return { todoItems, addTodoItem, fetchTodos };
 }

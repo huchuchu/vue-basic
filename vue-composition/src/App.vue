@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { onBeforeMount } from 'vue';
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
 import TodoList from './components/TodoList.vue';
@@ -24,7 +25,7 @@ export default {
 		};
 	},
 	setup() {
-		const { todoItems, addTodoItem } = useTodo();
+		const { todoItems, addTodoItem, fetchTodos } = useTodo();
 		//data
 		// const todoItems = ref([]);
 
@@ -41,9 +42,9 @@ export default {
 		// }
 
 		// 라이프 사이클 API가 적용된 구간
-		// onBeforeMount(() => {
-		// 	todoItems.value = fetchTodos();
-		// });
+		onBeforeMount(() => {
+			todoItems.value = fetchTodos();
+		});
 
 		// function addTodoItem(todo) {
 		// 	todoItems.value.push(todo);
